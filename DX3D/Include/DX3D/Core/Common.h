@@ -44,6 +44,24 @@ namespace dx3d
 		PixelShader
 	};
 
+	// new code added:: raster and culltype
+
+	// culling mode types needed for wireframing
+
+	enum class CullType
+	{
+		Backface = 0,
+		Frontface,
+		None
+	};
+
+	// Raster Decscription
+	struct RasterStateDesc
+	{
+		bool wireframeState = false;
+		CullType cullType{};
+	};
+
 	struct ShaderCompileDesc
 	{
 		const char* shaderSourceName{};

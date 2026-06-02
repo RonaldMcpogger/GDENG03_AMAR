@@ -54,3 +54,7 @@ void dx3d::DeviceContext::drawTriangleList(ui32 vertexCount, ui32 startVertex)
 	m_context->Draw(vertexCount,startVertex);
 
 }
+
+
+
+

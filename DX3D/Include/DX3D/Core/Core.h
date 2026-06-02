@@ -21,6 +21,9 @@ namespace dx3d
 
 	class VertexShaderSignature;
 
+	//new code added:: raster state and Rasterstateptr
+	// forward declare raster class
+	class RasterState; 
 
 	using i32 = int; //32 bits
 	using ui32 = unsigned int; //32 bits unsigned
@@ -34,5 +37,7 @@ namespace dx3d
 	using VertexBufferPtr = std::shared_ptr<VertexBuffer>;
 	using VertexShaderSignaturePtr = std::shared_ptr<VertexShaderSignature>;
 
+	using RasterStatePtr = std::shared_ptr<RasterState>; 
+	// shared ptr for raster state to graphics and render
 }
 
