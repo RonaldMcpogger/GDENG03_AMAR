@@ -2,11 +2,14 @@
 #include <DX3D/Graphics/GraphicsLogUtils.h>
 #include <DX3D/Graphics/DeviceContext.h>
 
+// note to ram, when making new classes for graphics dont forget to include header here
 #include <DX3D/Graphics/SwapChain.h>
 #include <DX3D/Graphics/ShaderBinary.h>
 #include <DX3D/Graphics/GraphicsPipelineState.h>
 #include <DX3D/Graphics/VertexBuffer.h>
 #include <DX3D/Graphics/VertexShaderSignature.h>
+#include <DX3D/Graphics/RasterState.h>
+
 
 using namespace dx3d;
 dx3d::GraphicsDevice::GraphicsDevice(const GraphicsDeviceDesc& desc) : Base(desc.base)
@@ -68,6 +71,11 @@ VertexBufferPtr dx3d::GraphicsDevice::createVertexBuffer(const VertexBufferDesc&
 VertexShaderSignaturePtr dx3d::GraphicsDevice::createVertexShaderSignature(const VertexShaderSignatureDesc& desc)
 {
 	return std::make_shared<VertexShaderSignature>(desc, getGraphicsResourceDesc());
+}
+
+RasterStatePtr dx3d::GraphicsDevice::createRasterState(const RasterStateDesc& desc)
+{
+	return std::make_shared<RasterState>(desc, getGraphicsResourceDesc());
 }
 
 void dx3d::GraphicsDevice::executeCommandList(DeviceContext& context)

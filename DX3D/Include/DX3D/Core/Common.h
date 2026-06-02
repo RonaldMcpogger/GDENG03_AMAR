@@ -50,8 +50,8 @@ namespace dx3d
 
 	enum class CullType
 	{
-		Backface = 0,
-		Frontface,
+		Backface = 0, // polygons facing camera 
+		Frontface, // polygons facing away from camera
 		None
 	};
 

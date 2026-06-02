@@ -24,6 +24,7 @@ namespace dx3d
 
 
 		VertexShaderSignaturePtr createVertexShaderSignature(const VertexShaderSignatureDesc& desc);
+		RasterStatePtr createRasterState(const RasterStateDesc& desc);
 
 		void executeCommandList( DeviceContext& context);
 

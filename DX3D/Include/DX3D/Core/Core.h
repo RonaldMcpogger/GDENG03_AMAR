@@ -1,5 +1,7 @@
 #pragma once
 #include <stdexcept>
+//this is a temp fix
+
 #include <memory>
 // forward declare to avoid circular dependencies and reduce compile time
 namespace dx3d
@@ -21,9 +23,7 @@ namespace dx3d
 
 	class VertexShaderSignature;
 
-	//new code added:: raster state and Rasterstateptr
-	// forward declare raster class
-	class RasterState; 
+	class RasterState;
 
 	using i32 = int; //32 bits
 	using ui32 = unsigned int; //32 bits unsigned

@@ -12,7 +12,7 @@ namespace dx3d
 	public:
 		ID3D11RasterizerState* getState() const noexcept;
 		const D3D11_RASTERIZER_DESC& getDesc() const noexcept;
-	}
+	
 	private:
 	
 		Microsoft::WRL::ComPtr<ID3D11RasterizerState> m_rState{}; // rasterizer state object

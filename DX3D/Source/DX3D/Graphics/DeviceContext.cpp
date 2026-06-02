@@ -2,6 +2,7 @@
 #include <DX3D/Graphics/SwapChain.h>
 #include <DX3D/Graphics/GraphicsPipelineState.h>
 #include <DX3D/Graphics/VertexBuffer.h>
+#include <DX3D/Graphics/RasterState.h> // Add this include at the top of the file
 dx3d::DeviceContext::DeviceContext(const GraphicsResourceDesc& gDesc)
 	: GraphicsResource(gDesc)
 {
@@ -53,6 +54,14 @@ void dx3d::DeviceContext::drawTriangleList(ui32 vertexCount, ui32 startVertex)
 	// vertex count - how many vertices
 	m_context->Draw(vertexCount,startVertex);
 
+}
+
+//setting raster state
+void dx3d::DeviceContext::setRasterState(const RasterState& rasterizeState)
+{
+	m_RasterizerState = rasterizeState.getState(); // store reference 
+
+	m_context->RSSetState(m_RasterizerState.Get()); // actual application of raster
 }
 
 

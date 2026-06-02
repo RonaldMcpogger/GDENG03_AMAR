@@ -30,6 +30,11 @@ namespace dx3d
 		DeviceContextPtr m_deviceContext{};
 		GraphicsPipelineStatePtr m_pipeline{};
 		VertexBufferPtr m_vb{};
+
+		//add the raster pointer here for the reference ptr
+		RasterStatePtr m_rasterState{};
+
+		
 	
 	};
 }

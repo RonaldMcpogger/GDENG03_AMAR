@@ -5,8 +5,8 @@ dx3d::RasterState::RasterState(const RasterStateDesc& desc, const GraphicsResour
 {
 	D3D11_RASTERIZER_DESC rasterDesc{};
 
-	rasterDesc.FillMode = desc.wireframeState ?
-		D3D11_FILL_WIREFRAME : D3D11_FILL_SOLID; // set fill mode based on wireframe state
+	rasterDesc.FillMode = desc.wireframeState ? D3D11_FILL_WIREFRAME : D3D11_FILL_SOLID; // set fill mode based on wireframe state
+	//TRUE - WIREFRAME : FALSE - SOLID
 	
 	switch (desc.cullType)
 	{
@@ -21,14 +21,15 @@ dx3d::RasterState::RasterState(const RasterStateDesc& desc, const GraphicsResour
 		break;
 	default:
 		rasterDesc.CullMode = D3D11_CULL_BACK; 
-		// reset to backface in case of error
+		// reset in case of error
 		break;
 	}
 
-	//setting raster functions here similar to swapchain's constructor function
+	//setting raster functions 
 
 	rasterDesc.FrontCounterClockwise = FALSE; // default to clockwise winding order for front faces
-	//depth biases
+	//depth biases for the z buffer so 3d models can be rendered without z fighting. 
+	//depth biases are set to 0 since engine is currently using primitive triangles for now
 	rasterDesc.DepthBias = 0; 
 	rasterDesc.DepthBiasClamp = 0.0f;
 	rasterDesc.SlopeScaledDepthBias = 0.0f;
@@ -51,10 +52,10 @@ dx3d::RasterState::RasterState(const RasterStateDesc& desc, const GraphicsResour
 
 ID3D11RasterizerState* dx3d::RasterState::getState() const noexcept
 {
-	return m_rState
+	return m_rState.Get();
 }
 
-const D3D11_RASTERIZER_DESC& dx3d::RasterState::getDesc() const noexcept
+ const D3D11_RASTERIZER_DESC& dx3d::RasterState::getDesc() const noexcept
 {
-	// TODO: insert return statement here
+	return m_rasterDesc;
 }
