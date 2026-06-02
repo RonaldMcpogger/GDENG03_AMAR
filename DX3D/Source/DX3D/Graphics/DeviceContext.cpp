@@ -8,7 +8,7 @@ dx3d::DeviceContext::DeviceContext(const GraphicsResourceDesc& gDesc)
 DX3DGraphicsLogErrorAndThrowOnFail(m_device.CreateDeferredContext(0, &m_context)
 		, "Create deferred context failed");
 }
-
+//
 void dx3d::DeviceContext::clearAndSetBackBuffer(const SwapChain& swapChain, const Vec4& color)
 {	//COLOR SETT
 	f32 fColor[] = { color.x, color.y, color.z, color.w };
