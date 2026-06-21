@@ -78,6 +78,8 @@ RasterStatePtr dx3d::GraphicsDevice::createRasterState(const RasterStateDesc& de
 	return std::make_shared<RasterState>(desc, getGraphicsResourceDesc());
 }
 
+
+
 void dx3d::GraphicsDevice::executeCommandList(DeviceContext& context)
 {
 	Microsoft::WRL::ComPtr<ID3D11CommandList> list{};

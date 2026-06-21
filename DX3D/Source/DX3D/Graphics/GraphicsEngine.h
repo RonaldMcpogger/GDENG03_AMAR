@@ -3,6 +3,8 @@
 #include <DX3D/Core/Core.h>
 #include <DX3D/Math/Vec3.h>
 #include <DX3D/Math/Vec4.h>
+#include <DX3D/Graphics/Quad.h> // added
+
 namespace dx3d
 {
 	class GraphicsEngine final : public Base
@@ -19,24 +21,31 @@ namespace dx3d
 		
 
 	private:
+	
+		
 		struct Vertex //vertex color and position data
 		{
 			Vec3 position;
 			Vec4 color;
 		};
-
+		
 	private:
 		std::shared_ptr<GraphicsDevice> m_graphicsDevice{}; // shared ptr because of shared from this
 		DeviceContextPtr m_deviceContext{};
 		GraphicsPipelineStatePtr m_pipeline{};
+		
 		VertexBufferPtr m_vb{};
 
 		//add the raster pointer here for the reference ptr
 		RasterStatePtr m_rasterState{};
 
-		
+
+		std::vector<std::unique_ptr<Quad>> m_quads{};
+		// quads
 	
+
 	};
 }
+
 
 

@@ -1,11 +1,11 @@
 #pragma once
 #include <stdexcept>
-//this is a temp fix
+#include <vector>
 
 #include <memory>
-// forward declare to avoid circular dependencies and reduce compile time
 namespace dx3d
 {
+	// core engines stuff
 	class Base;
 	class Window;
 	class Game;
@@ -13,17 +13,20 @@ namespace dx3d
 	class GraphicsDevice;
 	class Logger;
 
+	// main rendering stuff
 	class SwapChain;
 	class Display;
 	class DeviceContext;
 	class ShaderBinary;
-
 	class GraphicsPipelineState;
 	class VertexBuffer;
 
 	class VertexShaderSignature;
 
+	//rasteriser and wireframe
 	class RasterState;
+
+
 
 	using i32 = int; //32 bits
 	using ui32 = unsigned int; //32 bits unsigned
@@ -38,6 +41,9 @@ namespace dx3d
 	using VertexShaderSignaturePtr = std::shared_ptr<VertexShaderSignature>;
 
 	using RasterStatePtr = std::shared_ptr<RasterState>; 
+
+
+//	using QuadPtr = std::shared_ptr<Quad>;
 	// shared ptr for raster state to graphics and render
 }
 

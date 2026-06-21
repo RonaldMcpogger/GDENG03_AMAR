@@ -21,9 +21,9 @@ namespace dx3d
 		GraphicsPipelineStatePtr createGraphicsPipelineState(const GraphicsPipelineStateDesc& desc);
 
 		VertexBufferPtr createVertexBuffer(const VertexBufferDesc& desc);
-
-
 		VertexShaderSignaturePtr createVertexShaderSignature(const VertexShaderSignatureDesc& desc);
+
+		// new code classes
 		RasterStatePtr createRasterState(const RasterStateDesc& desc);
 
 		void executeCommandList( DeviceContext& context);

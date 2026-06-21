@@ -44,8 +44,8 @@ namespace dx3d
 		PixelShader
 	};
 
-	// new code added:: raster and culltype
-
+	//testing transfering the vertex struct here
+	
 	// culling mode types needed for wireframing
 
 	enum class CullType
@@ -61,6 +61,16 @@ namespace dx3d
 		bool wireframeState = false;
 		CullType cullType{};
 	};
+	
+	//Quad description
+
+	//struct QuadDesc
+	//{
+	//	Vec3 position{};
+	//	Vec4 color{};
+	//	Vec3 scale{};
+	//	//vec4 rotation {}; // add rotation later if needed
+	//};
 
 	struct ShaderCompileDesc
 	{
